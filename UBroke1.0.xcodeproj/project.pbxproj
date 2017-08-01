@@ -13,6 +13,10 @@
 		51D3954F1F2E9C65001E4CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D3954D1F2E9C65001E4CB6 /* LaunchScreen.storyboard */; };
 		51D3955A1F2E9C65001E4CB6 /* UBroke1_0Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395591F2E9C65001E4CB6 /* UBroke1_0Tests.swift */; };
 		51D395651F2E9C65001E4CB6 /* UBroke1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395641F2E9C65001E4CB6 /* UBroke1_0UITests.swift */; };
+		51D395751F301009001E4CB6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D395741F301009001E4CB6 /* SWRevealViewController.m */; };
+		51D395771F301173001E4CB6 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395761F301173001E4CB6 /* FrontView.swift */; };
+		51D395791F30193D001E4CB6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395781F30193D001E4CB6 /* ProfileView.swift */; };
+		51D3957B1F301ACF001E4CB6 /* MetroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D3957A1F301ACF001E4CB6 /* MetroView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,12 @@
 		51D395601F2E9C65001E4CB6 /* UBroke1.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UBroke1.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D395641F2E9C65001E4CB6 /* UBroke1_0UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBroke1_0UITests.swift; sourceTree = "<group>"; };
 		51D395661F2E9C66001E4CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51D395721F301008001E4CB6 /* UBroke1.0-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UBroke1.0-Bridging-Header.h"; sourceTree = "<group>"; };
+		51D395731F301009001E4CB6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		51D395741F301009001E4CB6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		51D395761F301173001E4CB6 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
+		51D395781F30193D001E4CB6 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		51D3957A1F301ACF001E4CB6 /* MetroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +109,13 @@
 				51D395481F2E9C65001E4CB6 /* Main.storyboard */,
 				51D3954B1F2E9C65001E4CB6 /* Assets.xcassets */,
 				51D3954D1F2E9C65001E4CB6 /* LaunchScreen.storyboard */,
+				51D395731F301009001E4CB6 /* SWRevealViewController.h */,
+				51D395741F301009001E4CB6 /* SWRevealViewController.m */,
 				51D395501F2E9C65001E4CB6 /* Info.plist */,
+				51D395721F301008001E4CB6 /* UBroke1.0-Bridging-Header.h */,
+				51D395761F301173001E4CB6 /* FrontView.swift */,
+				51D395781F30193D001E4CB6 /* ProfileView.swift */,
+				51D3957A1F301ACF001E4CB6 /* MetroView.swift */,
 			);
 			path = UBroke1.0;
 			sourceTree = "<group>";
@@ -190,6 +206,7 @@
 				TargetAttributes = {
 					51D395401F2E9C65001E4CB6 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					51D395541F2E9C65001E4CB6 = {
@@ -256,7 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51D395791F30193D001E4CB6 /* ProfileView.swift in Sources */,
+				51D3957B1F301ACF001E4CB6 /* MetroView.swift in Sources */,
 				51D395451F2E9C65001E4CB6 /* AppDelegate.swift in Sources */,
+				51D395751F301009001E4CB6 /* SWRevealViewController.m in Sources */,
+				51D395771F301173001E4CB6 /* FrontView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,10 +431,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UBroke1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SASoto.S-D-E.UBroke1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UBroke1.0/UBroke1.0-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -422,10 +446,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = UBroke1.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SASoto.S-D-E.UBroke1-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UBroke1.0/UBroke1.0-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -503,6 +529,7 @@
 				51D3956B1F2E9C66001E4CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		51D3956C1F2E9C66001E4CB6 /* Build configuration list for PBXNativeTarget "UBroke1.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +538,7 @@
 				51D3956E1F2E9C66001E4CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		51D3956F1F2E9C66001E4CB6 /* Build configuration list for PBXNativeTarget "UBroke1.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +547,7 @@
 				51D395711F2E9C66001E4CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

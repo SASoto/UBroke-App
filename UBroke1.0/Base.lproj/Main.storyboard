@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Yd7-54-xvO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="4c8-Uh-dUY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View-->
+        <!--View Controller-->
+        <scene sceneID="TYr-vq-f4F">
+            <objects>
+                <viewController id="tJF-FV-beM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="i1F-cE-DjX"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zmf-jJ-LVJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2j1-g4-it0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MCk-wH-VJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="-664"/>
+        </scene>
+        <!--Front View-->
         <scene sceneID="A8w-iW-FYd">
             <objects>
-                <viewController id="v7Y-dQ-B8d" customClass="MainView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="v7Y-dQ-B8d" customClass="FrontView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hxw-sk-KCo"/>
                         <viewControllerLayoutGuide type="bottom" id="Kj3-FE-Zjx"/>
@@ -67,12 +85,80 @@
                     </view>
                     <navigationItem key="navigationItem" id="kf5-Z8-xUt">
                         <barButtonItem key="leftBarButtonItem" image="icons8-Settings-48" id="Wlg-aI-lEN"/>
-                        <barButtonItem key="rightBarButtonItem" image="icons8-User-50" id="UTF-NH-aw4"/>
+                        <barButtonItem key="rightBarButtonItem" image="icons8-User-50" id="UTF-NH-aw4">
+                            <connections>
+                                <action selector="profileButton:" destination="v7Y-dQ-B8d" id="Jsb-j3-pq0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="metroButton" destination="Fi2-hg-Qf1" id="K3b-QN-3fW"/>
+                        <outlet property="settingsButton" destination="Wlg-aI-lEN" id="ijd-61-K3g"/>
+                        <segue destination="Zua-9o-vA7" kind="show" identifier="mv2ProfView" id="6wA-W6-8Ku"/>
+                        <segue destination="qn0-nL-93V" kind="show" identifier="mv2MetroView" id="rH3-Xn-4qF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Er-gQ-X0c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1182" y="33"/>
+        </scene>
+        <!--Profile View-->
+        <scene sceneID="Spf-BY-jSc">
+            <objects>
+                <viewController title="Profile View" id="Zua-9o-vA7" customClass="ProfileView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kPl-SE-cgS"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hmi-Yl-BA9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zDZ-ix-npP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFD-wJ-X7K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2065" y="33"/>
+        </scene>
+        <!--Metro View-->
+        <scene sceneID="bfw-gA-a9U">
+            <objects>
+                <viewController title="Metro View" id="qn0-nL-93V" customClass="MetroView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tkX-br-SxS"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Eu-sD-6RO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rRP-P8-Jh1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDx-ZG-gOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="725"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="kEk-66-dCt">
+            <objects>
+                <viewController id="4c8-Uh-dUY" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G5z-Ae-6kw"/>
+                        <viewControllerLayoutGuide type="bottom" id="cvR-EP-jvg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Uhe-EM-eOV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Yd7-54-xvO" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="Ouh-58-30r"/>
+                        <segue destination="tJF-FV-beM" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="g96-RY-6GY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xcw-5L-ZAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1182" y="-664"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gru-ca-hIH">
