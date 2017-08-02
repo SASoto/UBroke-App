@@ -9,11 +9,20 @@
 import UIKit
 
 class MetroView: UIViewController {
-
+    
+    //Credit to Luna An from Medium
+    @IBAction func closeButton(_ sender: Any) {
+        performSegue(withIdentifier: "mvBack2FrontSeg", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        //navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        //CAN USE
+        //myFirstButton.addTarget(self, action: #selector(myClass.pressed(_:)), forControlEvents: .TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +30,10 @@ class MetroView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //Credit to @Yerbol from Stack Overflow
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

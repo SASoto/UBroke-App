@@ -10,12 +10,16 @@ import UIKit
 
 class FrontView: UIViewController {
 
+    @IBAction func mvBack2Front(segue:UIStoryboardSegue) { }
+    
     @IBOutlet weak var settingsButton: UIBarButtonItem!
     @IBOutlet weak var metroButton: UIButton!
     
     @IBAction func profileButton(_ sender: Any) {
         performSegue(withIdentifier: "mv2ProfView", sender: nil)
     }
+    
+    let screenSize = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +40,7 @@ class FrontView: UIViewController {
         if revealViewController() != nil {
             settingsButton.target = revealViewController()
             settingsButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 375
+            revealViewController().rearViewRevealWidth = screenSize.width * 0.92
             
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
