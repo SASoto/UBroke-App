@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5148E61F1F364FC300C796E3 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148E61E1F364FC200C796E3 /* QuestionCell.swift */; };
 		51D395451F2E9C65001E4CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395441F2E9C65001E4CB6 /* AppDelegate.swift */; };
 		51D3954A1F2E9C65001E4CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51D395481F2E9C65001E4CB6 /* Main.storyboard */; };
 		51D3954C1F2E9C65001E4CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51D3954B1F2E9C65001E4CB6 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5148E61E1F364FC200C796E3 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		51D395411F2E9C65001E4CB6 /* UBroke1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UBroke1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51D395441F2E9C65001E4CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51D395491F2E9C65001E4CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				51D395761F301173001E4CB6 /* FrontView.swift */,
 				51D395781F30193D001E4CB6 /* ProfileView.swift */,
 				51D3957A1F301ACF001E4CB6 /* MetroView.swift */,
+				5148E61E1F364FC200C796E3 /* QuestionCell.swift */,
 			);
 			path = UBroke1.0;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				51D395791F30193D001E4CB6 /* ProfileView.swift in Sources */,
 				51D3957B1F301ACF001E4CB6 /* MetroView.swift in Sources */,
 				51D395451F2E9C65001E4CB6 /* AppDelegate.swift in Sources */,
+				5148E61F1F364FC300C796E3 /* QuestionCell.swift in Sources */,
 				51D395751F301009001E4CB6 /* SWRevealViewController.m in Sources */,
 				51D395771F301173001E4CB6 /* FrontView.swift in Sources */,
 			);
