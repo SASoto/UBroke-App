@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension UILabel
+//Credit to @Philipp Otto from StackOverflow
+/*extension UILabel
 {
-    //Credit to @Philipp Otto from StackOverflow
     var optimalHeight : CGFloat
     {
         get
@@ -26,9 +26,9 @@ extension UILabel
             return label.frame.height
         }
     }
-}
+}*/
 
-class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     //Credit to @Luna An from Medium
     @IBAction func closeButton(_ sender: Any) {
@@ -67,7 +67,7 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.view.endEditing(true)
     }
     
-    var customHeight: CGFloat?
+    //var customHeight: CGFloat?
     /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return customHeight!
     }*/
@@ -80,8 +80,15 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "questionCell",
             for: indexPath) as! QuestionCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.questTextField?.delegate = self
         cell.questLabel.text = questArray[indexPath.row]
+        //Credit to @CoffeeCoding from CoffeeCoding
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.questTextField?.autocorrectionType = UITextAutocorrectionType.no
+        cell.questTextField?.autocapitalizationType = UITextAutocapitalizationType.none
+        cell.questTextField?.adjustsFontSizeToFitWidth = true;
+        //cell.questTextField.placeholder = tempNums[indexPath.row]
+        //cell.questTextField.tag(indexPath.row)
         
         return cell
     }
@@ -89,6 +96,37 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.view.endEditing(true)
     }
+    
+    var valuesArray: [Int] = []
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let index:Int = self.questTableView.indexPathForSelectedRow as! Int
+        
+        let newValue: Int? = Int(textField.text!)
+        var alreadyThere = false
+        for i in valuesArray {
+            if valuesArray[i] == newValue {
+                alreadyThere = true
+                break
+            }
+        }
+        if !alreadyThere {
+            //valuesArray.append(newValue!)
+            valuesArray.insert(newValue!, at: index)
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "mv2OPMetro") {
+            (segue.destination as! OPMetroView).passedValArr = valuesArray
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
