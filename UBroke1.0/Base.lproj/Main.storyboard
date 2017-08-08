@@ -232,7 +232,7 @@
                                 </constraints>
                                 <state key="normal" title="Submit"/>
                                 <connections>
-                                    <segue destination="GHw-dP-6mU" kind="show" identifier="mv2OPMetro" id="h5y-cG-j5m"/>
+                                    <segue destination="GHw-dP-6mU" kind="presentation" identifier="mv2OPMetro" id="h5y-cG-j5m"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questionnaire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-gB-0r8">
@@ -270,10 +270,10 @@
             </objects>
             <point key="canvasLocation" x="1181.1594202898552" y="723.09782608695662"/>
         </scene>
-        <!--View Controller-->
+        <!--Metro View-->
         <scene sceneID="Jdw-0C-APv">
             <objects>
-                <viewController id="GHw-dP-6mU" sceneMemberID="viewController">
+                <viewController id="GHw-dP-6mU" customClass="OPMetroView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3AZ-H2-DTc"/>
                         <viewControllerLayoutGuide type="bottom" id="IAv-ia-xDb"/>
@@ -281,7 +281,24 @@
                     <view key="view" contentMode="scaleToFill" id="ajI-re-kJt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nKT-61-uAg">
+                                <rect key="frame" x="10" y="20" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6QW-Kd-IfY"/>
+                                    <constraint firstAttribute="width" constant="30" id="Xl8-xz-8Ca"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="icons8-Close Window-50"/>
+                                <connections>
+                                    <action selector="closeButton:" destination="GHw-dP-6mU" eventType="touchUpInside" id="uUk-Or-6iW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nKT-61-uAg" firstAttribute="leading" secondItem="ajI-re-kJt" secondAttribute="leading" constant="10" id="Nbi-69-1kb"/>
+                            <constraint firstItem="nKT-61-uAg" firstAttribute="top" secondItem="3AZ-H2-DTc" secondAttribute="bottom" id="mRQ-EJ-GTq"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XK2-UH-tg8" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -88,8 +88,8 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         cell.questTextField?.autocapitalizationType = UITextAutocapitalizationType.none
         cell.questTextField?.adjustsFontSizeToFitWidth = true;
         //cell.questTextField.placeholder = tempNums[indexPath.row]
-        //cell.questTextField.tag(indexPath.row)
         
+        cell.questTextField.tag = indexPath.row
         return cell
     }
     
@@ -97,13 +97,14 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         self.view.endEditing(true)
     }
     
-    var valuesArray: [Int] = []
-    
+    var valuesArray: [Int]! = []
+    //Credit to @pbasdf from StackOverflow
+    var rowBeingEdited : Int? = nil
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let index:Int = self.questTableView.indexPathForSelectedRow as! Int
-        
+        let index = textField.tag
+        print("Index: ", index)
         let newValue: Int? = Int(textField.text!)
-        var alreadyThere = false
+        /*var alreadyThere = false
         for i in valuesArray {
             if valuesArray[i] == newValue {
                 alreadyThere = true
@@ -113,17 +114,35 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         if !alreadyThere {
             //valuesArray.append(newValue!)
             valuesArray.insert(newValue!, at: index)
-        }
+        }*/
+        valuesArray.insert(newValue!, at: index)
+        rowBeingEdited = nil
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        rowBeingEdited = textField.tag
+    }
+    
+    /*func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
-    }
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "mv2OPMetro") {
-            (segue.destination as! OPMetroView).passedValArr = valuesArray
+            if let row = rowBeingEdited {
+                let indexPath = IndexPath(row:row, section:0)
+                let cell: QuestionCell? = self.questTableView.cellForRow(at: indexPath) as? QuestionCell
+                cell?.questTextField.resignFirstResponder()
+            }
+            
+            for element in valuesArray {
+                print(element, ",")
+            }
+            
+            if let vc = segue.destination as? OPMetroView {
+                vc.passedValArr = valuesArray
+            }
         }
     }
     

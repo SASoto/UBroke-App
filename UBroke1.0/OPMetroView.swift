@@ -10,7 +10,11 @@ import UIKit
 
 class OPMetroView: UIViewController {
 
-    var passedValArr: [Int] = []
+    @IBAction func closeButton(_ sender: Any) {
+        //performSegue(withIdentifier: "mvBack2FrontSeg", sender: self)
+          dismiss(animated: true, completion: nil)
+    }
+    var passedValArr: [Int]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
