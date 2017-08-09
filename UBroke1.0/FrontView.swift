@@ -20,6 +20,8 @@ class FrontView: UIViewController {
     }
     
     let screenSize = UIScreen.main.bounds
+    var passedUser: String?
+    var passedPass: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()

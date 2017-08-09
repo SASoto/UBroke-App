@@ -1,20 +1,17 @@
 //
-//  OPMetroView.swift
+//  LoginView.swift
 //  UBroke1.0
 //
-//  Created by Sit Down on 8/6/17.
+//  Created by Sit Down on 8/8/17.
 //  Copyright © 2017 Sit Down and Enjoy. All rights reserved.
 //
 
 import UIKit
 
-class OPMetroView: UIViewController {
+class LoginView: UIViewController {
 
-    @IBAction func closeButton(_ sender: Any) {
-        //performSegue(withIdentifier: "mvBack2FrontSeg", sender: self)
-          dismiss(animated: true, completion: nil)
-    }
-    var passedValArr: [Int]!
+    @IBOutlet weak var userField: UITextField!
+    @IBOutlet weak var passField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +24,14 @@ class OPMetroView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "mv2FirstScreen") {
+            if let vc = segue.destination as? FrontView {
+                vc.passedUser = userField.text
+                vc.passedPass = passField.text
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation
