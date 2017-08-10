@@ -13,10 +13,13 @@ class LoginView: UIViewController {
     @IBOutlet weak var userField: UITextField!
     @IBOutlet weak var passField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loginButton.addTarget(self, action: #selector(self.loginButtonTap), for: .touchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,9 +27,13 @@ class LoginView: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func loginButtonTap() {
+        performSegue(withIdentifier: "mv2QuestView", sender: nil)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "mv2FirstScreen") {
-            if let vc = segue.destination as? FrontView {
+        if(segue.identifier == "mv2QuestView") {
+            if let vc = segue.destination as? QuestionnaireView {
                 vc.passedUser = userField.text
                 vc.passedPass = passField.text
             }
