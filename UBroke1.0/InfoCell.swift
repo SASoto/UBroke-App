@@ -10,6 +10,9 @@ import UIKit
 
 class InfoCell: UITableViewCell {
 
+    @IBOutlet weak var questLabel: UILabel!
+    @IBOutlet weak var questTextField: UITextField!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

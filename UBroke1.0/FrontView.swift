@@ -19,15 +19,19 @@ class FrontView: UIViewController {
         performSegue(withIdentifier: "mv2ProfView", sender: nil)
     }
     
+    @IBOutlet weak var userLabel: UILabel!
+    
     let screenSize = UIScreen.main.bounds
     var passedUser: String?
     var passedPass: String?
+    
+    var passedInfo: [Double]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        userLabel.text = passedUser
         settingsMenu()
         buttonStyles()
         metroButton.addTarget(self, action: #selector(self.metroButtonTap), for: .touchUpInside)
