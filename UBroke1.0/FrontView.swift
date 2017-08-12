@@ -31,7 +31,14 @@ class FrontView: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        userLabel.text = passedUser
+        //print(passedUser!)
+        print(passedUser)
+        if(passedUser != nil) {
+            userLabel.text = passedUser
+        } else {
+            userLabel.text = "Anonymous"
+        }
+        
         settingsMenu()
         buttonStyles()
         metroButton.addTarget(self, action: #selector(self.metroButtonTap), for: .touchUpInside)

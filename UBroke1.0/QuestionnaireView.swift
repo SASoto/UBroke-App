@@ -39,6 +39,8 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     override func viewDidAppear(_ animated: Bool) {
         questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
         //questTableView.reloadData()
+        print(passedUser)
+        print(passedPass)
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,6 +102,9 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
             //cell.questTextField.placeholder = tempNums[indexPath.row]
             cell.questTextField.tag = indexPath.row
             
+            cell.alpha = 0
+            UIView.animate(withDuration: 2, animations: { cell.alpha = 1 })
+            
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
@@ -114,6 +119,9 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.questTextField?.adjustsFontSizeToFitWidth = true;
             //cell.questTextField.placeholder = tempNums[indexPath.row]
             cell.questTextField.tag = indexPath.row
+            
+            cell.alpha = 0
+            UIView.animate(withDuration: (2.5 * TimeInterval(indexPath.row)), animations: { cell.alpha = 1 })
             
             return cell
         }
@@ -140,12 +148,21 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "mv2FrontTview") {
-            if let vc = segue.destination as? FrontView {
-                vc.passedUser = passedUser
-                vc.passedPass = passedPass
-                vc.passedInfo = infoArray
-            }
+        if(segue.identifier == "mv2FrontView") {
+            //print("hwat")
+            //let revealVC = storyboard?.instantiateViewController(withIdentifier :"SWRevealViewController") as! SWRevealViewController
+            let revealVC = segue.destination as! SWRevealViewController
+            revealVC.loadView()
+            let vc = revealVC.frontViewController as! UINavigationController
+            vc.loadView()
+            let mainVC = vc.topViewController as! FrontView
+            //if let mainVC = vc.topViewController as? FrontView/*vc.topViewController?.isKind(of: FrontView))!*/ {
+                print("hwat")
+                //let mainVC = vc.topViewController as! FrontView
+                mainVC.passedUser = passedUser
+                mainVC.passedPass = passedPass
+                mainVC.passedInfo = infoArray
+            //}
         }
     }
     

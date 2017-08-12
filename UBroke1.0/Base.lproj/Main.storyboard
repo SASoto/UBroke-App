@@ -31,7 +31,7 @@
         <!--Front View-->
         <scene sceneID="A8w-iW-FYd">
             <objects>
-                <viewController id="v7Y-dQ-B8d" customClass="FrontView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FrontView" id="v7Y-dQ-B8d" customClass="FrontView" customModule="UBroke1_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hxw-sk-KCo"/>
                         <viewControllerLayoutGuide type="bottom" id="Kj3-FE-Zjx"/>
@@ -428,7 +428,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gqm-Fa-yUT">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gqm-Fa-yUT">
                                 <rect key="frame" x="0.0" y="96" width="414" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -535,7 +535,7 @@
         <!--Reveal View Controller-->
         <scene sceneID="kEk-66-dCt">
             <objects>
-                <viewController id="4c8-Uh-dUY" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SWRevealViewController" id="4c8-Uh-dUY" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G5z-Ae-6kw"/>
                         <viewControllerLayoutGuide type="bottom" id="cvR-EP-jvg"/>
