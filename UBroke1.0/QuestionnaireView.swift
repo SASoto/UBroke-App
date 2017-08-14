@@ -34,13 +34,17 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
         hourlyButton.addTarget(self, action: #selector(self.hourlyButtonTap), for: .touchUpInside)
         weeklyButton.addTarget(self, action: #selector(self.weeklyButtonTap), for: .touchUpInside)
         submitButton.addTarget(self, action: #selector(self.submitButtonTap), for: .touchUpInside)
+        
+        buttonStyles()
+        
+        questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
+        //questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
         //questTableView.reloadData()
-        print(passedUser)
-        print(passedPass)
+        //print(passedUser)
+        //print(passedPass)
     }
     
     override func didReceiveMemoryWarning() {
@@ -48,22 +52,46 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
         // Dispose of any resources that can be recreated.
     }
     
+    func buttonStyles() {
+        hourlyButton.layer.cornerRadius = 4.0
+        // Shadow and Radius
+        //Credit to @return true from Stack Overflow
+        hourlyButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        hourlyButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.5)
+        hourlyButton.layer.shadowOpacity = 0.8
+        hourlyButton.layer.masksToBounds = false
+        
+        weeklyButton.layer.cornerRadius = 4.0
+        // Shadow and Radius
+        //Credit to @return true from Stack Overflow
+        weeklyButton.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        weeklyButton.layer.shadowOffset = CGSize(width: 0.0, height: 1.5)
+        weeklyButton.layer.shadowOpacity = 0.8
+        weeklyButton.layer.masksToBounds = false
+    }
+    
     func hourlyButtonTap() {
+        hourlyButton.isEnabled = false
+        weeklyButton.isEnabled = true
         hourlyOrNot = true
-        //DispatchQueue.main.async {
+        hourlyButton.backgroundColor = UIColor(red: 144/255.0, green: 174/255.0, blue: 190/255.0, alpha: 1.0)
+        weeklyButton.backgroundColor = UIColor(red: 135/255.0, green: 219/255.0, blue: 220/255.0, alpha: 1.0)
         self.questTableView.reloadData()
-        //self.refresher.endRefreshing()
-        //}
-        //print("hourly")
+        //questTableView.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
+        questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
+        
     }
     
     func weeklyButtonTap() {
+        //Credit to @KerrM from StackOverflow
+        weeklyButton.isEnabled = false
+        hourlyButton.isEnabled = true
         hourlyOrNot = false
-        //DispatchQueue.main.async {
+        weeklyButton.backgroundColor = UIColor(red: 144/255.0, green: 174/255.0, blue: 190/255.0, alpha: 1.0)
+        hourlyButton.backgroundColor = UIColor(red: 135/255.0, green: 219/255.0, blue: 220/255.0, alpha: 1.0)
         self.questTableView.reloadData()
-        //self.refresher.endRefreshing()
-        //}
-        //print("weekly")
+        //questTableView.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
+        questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
     }
     
     func submitButtonTap() {
@@ -73,7 +101,7 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(hourlyOrNot == nil) {
             //print("Always")
-            return 1
+            return 0
         }
         else if(hourlyOrNot! == true) {
             print("Hourly")
@@ -87,41 +115,42 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(hourlyOrNot == nil) {
             let cell = UITableViewCell()
+            //cell.backgroundColor = UIColor(red: 127/255.0, green: 166/255.0, blue: 223/255.0, alpha: 1.0)
             return cell
         } else if(hourlyOrNot! == true) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
             cell.questTextField?.delegate = self
-            
+            //cell.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
             cell.questLabel.text = questArray_H[indexPath.row]
-
+            cell.questLabel.textColor = .white
+            
             //Credit to @CoffeeCoding from CoffeeCoding
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.questTextField?.autocorrectionType = UITextAutocorrectionType.no
             cell.questTextField?.autocapitalizationType = UITextAutocapitalizationType.none
             cell.questTextField?.adjustsFontSizeToFitWidth = true;
-            //cell.questTextField.placeholder = tempNums[indexPath.row]
             cell.questTextField.tag = indexPath.row
             
             cell.alpha = 0
-            UIView.animate(withDuration: 2, animations: { cell.alpha = 1 })
+            UIView.animate(withDuration: (2 * TimeInterval(indexPath.row)), animations: { cell.alpha = 1 })
             
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
             cell.questTextField?.delegate = self
-            
+            //cell.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
             cell.questLabel.text = questArray_W[indexPath.row]
+            cell.questLabel.textColor = .white
             
             //Credit to @CoffeeCoding from CoffeeCoding
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.questTextField?.autocorrectionType = UITextAutocorrectionType.no
             cell.questTextField?.autocapitalizationType = UITextAutocapitalizationType.none
             cell.questTextField?.adjustsFontSizeToFitWidth = true;
-            //cell.questTextField.placeholder = tempNums[indexPath.row]
             cell.questTextField.tag = indexPath.row
             
             cell.alpha = 0
-            UIView.animate(withDuration: (2.5 * TimeInterval(indexPath.row)), animations: { cell.alpha = 1 })
+            UIView.animate(withDuration: (2 * TimeInterval(indexPath.row)), animations: { cell.alpha = 1 })
             
             return cell
         }
