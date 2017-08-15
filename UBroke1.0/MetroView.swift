@@ -35,6 +35,7 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         performSegue(withIdentifier: "mvBack2FrontSeg", sender: self)
     }
     
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var questTableView: UITableView!
     
      var questArray: [String] = ["How many bus/train trips do you make in a day?", "How many (if any) of these trips are covered by ride transfers?", "For how many days of the week do you travel this often?", "How many of these trips are express bus service trips?"]
@@ -51,6 +52,8 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         questTableView.delegate = self
         questTableView.dataSource = self
         questTableView.isScrollEnabled = false
+        
+        submitButton.addTarget(self, action: #selector(self.submitButtonTap), for: .touchUpInside)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,6 +68,11 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     //Credit to @Yerbol from Stack Overflow
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func submitButtonTap() {
+        performSegue(withIdentifier: "mv2OPMetroView", sender: nil)
+    
     }
     
     //var customHeight: CGFloat?

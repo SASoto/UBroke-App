@@ -119,16 +119,16 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
             return cell
         } else if(hourlyOrNot! == true) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
-            cell.questTextField?.delegate = self
+            cell.questTextField.delegate = self
             //cell.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
             cell.questLabel.text = questArray_H[indexPath.row]
             cell.questLabel.textColor = .white
             
             //Credit to @CoffeeCoding from CoffeeCoding
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-            cell.questTextField?.autocorrectionType = UITextAutocorrectionType.no
-            cell.questTextField?.autocapitalizationType = UITextAutocapitalizationType.none
-            cell.questTextField?.adjustsFontSizeToFitWidth = true;
+            cell.questTextField.autocorrectionType = UITextAutocorrectionType.no
+            cell.questTextField.autocapitalizationType = UITextAutocapitalizationType.none
+            cell.questTextField.adjustsFontSizeToFitWidth = true;
             cell.questTextField.tag = indexPath.row
             
             cell.alpha = 0
@@ -137,16 +137,16 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
-            cell.questTextField?.delegate = self
+            cell.questTextField.delegate = self
             //cell.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
             cell.questLabel.text = questArray_W[indexPath.row]
             cell.questLabel.textColor = .white
             
             //Credit to @CoffeeCoding from CoffeeCoding
             cell.selectionStyle = UITableViewCellSelectionStyle.none
-            cell.questTextField?.autocorrectionType = UITextAutocorrectionType.no
-            cell.questTextField?.autocapitalizationType = UITextAutocapitalizationType.none
-            cell.questTextField?.adjustsFontSizeToFitWidth = true;
+            cell.questTextField.autocorrectionType = UITextAutocorrectionType.no
+            cell.questTextField.autocapitalizationType = UITextAutocapitalizationType.none
+            cell.questTextField.adjustsFontSizeToFitWidth = true;
             cell.questTextField.tag = indexPath.row
             
             cell.alpha = 0
@@ -156,24 +156,31 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
         }
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.view.endEditing(true)
-    }
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //self.view.endEditing(true)
+    }*/
     
     var infoArray: [Double]! = []
     //Credit to @pbasdf from StackOverflow
-    var rowBeingEdited : Int? = nil
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let index = textField.tag
-        print("Index: ", index)
-        
-        let newValue: Double? = Double(textField.text!)
-        infoArray.insert(newValue!, at: index)
-        rowBeingEdited = nil
-    }
-    
+    var rowBeingEdited : Int?
     func textFieldDidBeginEditing(_ textField: UITextField) {
         rowBeingEdited = textField.tag
+        //print("rowBeingEdited in begin: ", rowBeingEdited)
+        //print("Index in begin: ", textField.tag)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let index = rowBeingEdited
+        //print("rowBeingEdited in end: ", rowBeingEdited)
+        //print("Index in end: ", index)
+        
+        //if(textField.text != nil) {
+        let newValue: Double? = Double(textField.text!)
+        if(newValue != nil) {
+            infoArray.insert(newValue!, at: index!)
+        }
+        
+        //rowBeingEdited = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

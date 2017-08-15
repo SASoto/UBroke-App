@@ -181,7 +181,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saW-WR-9Fv">
                                 <rect key="frame" x="10" y="85" width="394" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.95016539470000005" blue="0.9696142056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.97571878011666668" blue="0.98519494333877755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="questionCell" rowHeight="94" id="D9S-AI-Teb" customClass="QuestionCell" customModule="UBroke1_0" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="94"/>
@@ -214,7 +214,7 @@
                                                 <constraint firstItem="2cW-Sg-XA3" firstAttribute="top" secondItem="cDJ-M7-lRq" secondAttribute="topMargin" constant="18" id="xPC-AA-zGO"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="0.95016539470000005" blue="0.9696142056" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="1" green="0.97566452664444447" blue="0.98516186321618993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="2cW-Sg-XA3" firstAttribute="centerY" secondItem="D9S-AI-Teb" secondAttribute="centerY" id="DDH-NR-bft"/>
                                         </constraints>
@@ -225,17 +225,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFw-GM-9Az">
-                                <rect key="frame" x="82" y="636" width="250" height="35"/>
-                                <color key="backgroundColor" red="0.06870872237178631" green="0.84249836504213205" blue="0.12503118275899677" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="s5m-Xs-jO3"/>
-                                </constraints>
-                                <state key="normal" title="Submit"/>
-                                <connections>
-                                    <segue destination="GHw-dP-6mU" kind="presentation" identifier="mv2OPMetro" id="h5y-cG-j5m"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Questionnaire" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTf-gB-0r8">
                                 <rect key="frame" x="135" y="52" width="145" height="23"/>
                                 <constraints>
@@ -245,21 +234,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFw-GM-9Az">
+                                <rect key="frame" x="0.0" y="676" width="414" height="60"/>
+                                <color key="backgroundColor" red="0.4921578983576263" green="0.57399122850478568" blue="0.83238389756944442" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="JZ7-Sq-P2K"/>
+                                    <constraint firstAttribute="height" constant="60" id="iKT-FB-DrQ"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.95016539474999995" blue="0.96961420556068922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.97750914474999995" blue="0.98628658738315589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="j4x-0b-cmd" firstAttribute="top" secondItem="tkX-br-SxS" secondAttribute="bottom" id="5rK-Zn-3pc"/>
-                            <constraint firstItem="TFw-GM-9Az" firstAttribute="centerX" secondItem="rRP-P8-Jh1" secondAttribute="centerX" id="9vU-W6-7No"/>
                             <constraint firstItem="gTf-gB-0r8" firstAttribute="top" secondItem="tkX-br-SxS" secondAttribute="bottom" constant="32" id="GC6-1z-REc"/>
-                            <constraint firstItem="9Eu-sD-6RO" firstAttribute="top" secondItem="TFw-GM-9Az" secondAttribute="bottom" constant="65" id="TOm-zb-h69"/>
+                            <constraint firstItem="9Eu-sD-6RO" firstAttribute="top" secondItem="TFw-GM-9Az" secondAttribute="bottom" id="Gxx-mu-VoZ"/>
                             <constraint firstItem="gTf-gB-0r8" firstAttribute="centerX" secondItem="rRP-P8-Jh1" secondAttribute="centerX" id="aSb-rz-kDy"/>
-                            <constraint firstItem="TFw-GM-9Az" firstAttribute="leading" secondItem="rRP-P8-Jh1" secondAttribute="leadingMargin" constant="62" id="gib-kG-tyc"/>
+                            <constraint firstItem="TFw-GM-9Az" firstAttribute="leading" secondItem="rRP-P8-Jh1" secondAttribute="leading" id="iPl-B1-CSY"/>
                             <constraint firstItem="j4x-0b-cmd" firstAttribute="leading" secondItem="rRP-P8-Jh1" secondAttribute="leading" constant="10" id="ocj-mK-FlV"/>
+                            <constraint firstAttribute="trailing" secondItem="TFw-GM-9Az" secondAttribute="trailing" id="pu3-XZ-58W"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="questTableView" destination="saW-WR-9Fv" id="rCH-pn-DRv"/>
+                        <outlet property="submitButton" destination="TFw-GM-9Az" id="yOq-10-MLM"/>
                         <segue destination="MEV-yX-tnd" kind="unwind" identifier="mvBack2FrontSeg" unwindAction="mvBack2FrontWithSegue:" id="yEe-x3-APh"/>
+                        <segue destination="GHw-dP-6mU" kind="presentation" identifier="mv2OPMetroView" id="tEt-2G-CZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IDx-ZG-gOT" userLabel="First Responder" sceneMemberID="firstResponder"/>
