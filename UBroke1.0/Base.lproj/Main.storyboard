@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lFe-LT-qe9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lFe-LT-qe9">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -444,11 +444,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-Ab-gCZ">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-Ab-gCZ">
                                                     <rect key="frame" x="159" y="59" width="97" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="97" id="wSu-k3-CFR"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -456,8 +454,6 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="rxU-yn-eKj" firstAttribute="top" secondItem="ojS-QR-4PD" secondAttribute="topMargin" constant="22" id="2gA-a8-Azr"/>
-                                                <constraint firstItem="1tf-Ab-gCZ" firstAttribute="centerX" secondItem="rxU-yn-eKj" secondAttribute="centerX" id="6Kj-fq-ezk"/>
-                                                <constraint firstItem="1tf-Ab-gCZ" firstAttribute="top" secondItem="rxU-yn-eKj" secondAttribute="bottom" constant="8" symbolic="YES" id="GWT-D5-0gQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.22289736630000001" green="0.74619272069999998" blue="0.98725062610000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

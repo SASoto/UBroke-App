@@ -10,8 +10,6 @@ import UIKit
 
 class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
-    //var refresher: UIRefreshControl!
-    
     @IBOutlet weak var hourlyButton: UIButton!
     @IBOutlet weak var weeklyButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
@@ -41,10 +39,6 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
-        //questTableView.reloadData()
-        //print(passedUser)
-        //print(passedPass)
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,9 +71,8 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
         hourlyButton.backgroundColor = UIColor(red: 144/255.0, green: 174/255.0, blue: 190/255.0, alpha: 1.0)
         weeklyButton.backgroundColor = UIColor(red: 135/255.0, green: 219/255.0, blue: 220/255.0, alpha: 1.0)
         self.questTableView.reloadData()
-        //questTableView.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
+
         questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
-        
     }
     
     func weeklyButtonTap() {
@@ -90,7 +83,7 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
         weeklyButton.backgroundColor = UIColor(red: 144/255.0, green: 174/255.0, blue: 190/255.0, alpha: 1.0)
         hourlyButton.backgroundColor = UIColor(red: 135/255.0, green: 219/255.0, blue: 220/255.0, alpha: 1.0)
         self.questTableView.reloadData()
-        //questTableView.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
+        
         questTableView.frame = CGRect(x: questTableView.frame.origin.x, y: questTableView.frame.origin.y, width: questTableView.frame.size.width, height: questTableView.contentSize.height)
     }
     
@@ -100,14 +93,11 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(hourlyOrNot == nil) {
-            //print("Always")
             return 0
         }
         else if(hourlyOrNot! == true) {
-            print("Hourly")
             return questArray_H.count
         } else {
-            print("Weekly")
             return questArray_W.count
         }
     }
@@ -115,12 +105,10 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(hourlyOrNot == nil) {
             let cell = UITableViewCell()
-            //cell.backgroundColor = UIColor(red: 127/255.0, green: 166/255.0, blue: 223/255.0, alpha: 1.0)
             return cell
         } else if(hourlyOrNot! == true) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
             cell.questTextField.delegate = self
-            //cell.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
             cell.questLabel.text = questArray_H[indexPath.row]
             cell.questLabel.textColor = .white
             
@@ -128,7 +116,7 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             cell.questTextField.autocorrectionType = UITextAutocorrectionType.no
             cell.questTextField.autocapitalizationType = UITextAutocapitalizationType.none
-            cell.questTextField.adjustsFontSizeToFitWidth = true;
+            //cell.questTextField.adjustsFontSizeToFitWidth = true;
             cell.questTextField.tag = indexPath.row
             
             cell.alpha = 0
@@ -138,15 +126,15 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoCell
             cell.questTextField.delegate = self
-            //cell.backgroundColor = UIColor(red: 57/255.0, green: 190/255.0, blue: 252/255.0, alpha: 1.0)
             cell.questLabel.text = questArray_W[indexPath.row]
             cell.questLabel.textColor = .white
             
             //Credit to @CoffeeCoding from CoffeeCoding
             cell.selectionStyle = UITableViewCellSelectionStyle.none
+            //cell.questTextField.underlined()
             cell.questTextField.autocorrectionType = UITextAutocorrectionType.no
             cell.questTextField.autocapitalizationType = UITextAutocapitalizationType.none
-            cell.questTextField.adjustsFontSizeToFitWidth = true;
+            //cell.questTextField.adjustsFontSizeToFitWidth = true;
             cell.questTextField.tag = indexPath.row
             
             cell.alpha = 0
@@ -165,40 +153,29 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     var rowBeingEdited : Int?
     func textFieldDidBeginEditing(_ textField: UITextField) {
         rowBeingEdited = textField.tag
-        //print("rowBeingEdited in begin: ", rowBeingEdited)
-        //print("Index in begin: ", textField.tag)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         let index = rowBeingEdited
-        //print("rowBeingEdited in end: ", rowBeingEdited)
-        //print("Index in end: ", index)
         
-        //if(textField.text != nil) {
         let newValue: Double? = Double(textField.text!)
         if(newValue != nil) {
             infoArray.insert(newValue!, at: index!)
         }
         
-        //rowBeingEdited = nil
+        rowBeingEdited = nil
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "mv2FrontView") {
-            //print("hwat")
-            //let revealVC = storyboard?.instantiateViewController(withIdentifier :"SWRevealViewController") as! SWRevealViewController
             let revealVC = segue.destination as! SWRevealViewController
             revealVC.loadView()
             let vc = revealVC.frontViewController as! UINavigationController
             vc.loadView()
             let mainVC = vc.topViewController as! FrontView
-            //if let mainVC = vc.topViewController as? FrontView/*vc.topViewController?.isKind(of: FrontView))!*/ {
-                print("hwat")
-                //let mainVC = vc.topViewController as! FrontView
                 mainVC.passedUser = passedUser
                 mainVC.passedPass = passedPass
                 mainVC.passedInfo = infoArray
-            //}
         }
     }
     
