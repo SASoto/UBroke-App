@@ -16,6 +16,7 @@ class QuestionCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        questTextField.lineforMetroView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

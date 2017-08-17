@@ -32,7 +32,7 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     //Credit to @Luna An from Medium
     @IBAction func closeButton(_ sender: Any) {
-        performSegue(withIdentifier: "mvBack2FrontSeg", sender: self)
+        performSegue(withIdentifier: "mvBack2FrontMetro", sender: self)
     }
     
     @IBOutlet weak var submitButton: UIButton!
@@ -72,7 +72,6 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     func submitButtonTap() {
         performSegue(withIdentifier: "mv2OPMetroView", sender: nil)
-    
     }
     
     //var customHeight: CGFloat?
@@ -107,28 +106,20 @@ class MetroView: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     var valuesArray: [Int]! = []
     //Credit to @pbasdf from StackOverflow
-    var rowBeingEdited : Int? = nil
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        let index = textField.tag
-        print("Index: ", index)
-        let newValue: Int? = Int(textField.text!)
-        /*var alreadyThere = false
-        for i in valuesArray {
-            if valuesArray[i] == newValue {
-                alreadyThere = true
-                break
-            }
-        }
-        if !alreadyThere {
-            //valuesArray.append(newValue!)
-            valuesArray.insert(newValue!, at: index)
-        }*/
-        valuesArray.insert(newValue!, at: index)
-        rowBeingEdited = nil
-    }
-    
+    var rowBeingEdited : Int?
     func textFieldDidBeginEditing(_ textField: UITextField) {
         rowBeingEdited = textField.tag
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let index = rowBeingEdited
+        
+        let newValue: Int? = Int(textField.text!)
+        if(newValue != nil) {
+            valuesArray.insert(newValue!, at: index!)
+        }
+        
+        rowBeingEdited = nil
     }
     
     /*func textFieldShouldReturn(_ textField: UITextField) -> Bool {

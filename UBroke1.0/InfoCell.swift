@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UITextField {
+/*extension UITextField {
     
     func underlined(){
         //Credit to @Ashish Kakkad from StackOverflow
@@ -19,7 +19,7 @@ extension UITextField {
         self.layer.addSublayer(bottomLine)
         self.textAlignment = .center
     }
-}
+}*/
 
 class InfoCell: UITableViewCell {
 
@@ -30,7 +30,7 @@ class InfoCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        questTextField.underlined()
+        questTextField.lineforQuestView()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

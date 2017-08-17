@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C0868D2D7BE4773F243788A /* Pods_UBroke1_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA200475F86C8BB7B47BBC0 /* Pods_UBroke1_0.framework */; };
+		51185A211F451959005DFA13 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51185A201F451959005DFA13 /* Extensions.swift */; };
 		5148E61F1F364FC300C796E3 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148E61E1F364FC200C796E3 /* QuestionCell.swift */; };
 		5148E6211F38027A00C796E3 /* OPMetroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148E6201F38027A00C796E3 /* OPMetroView.swift */; };
 		51502FB71F3A9BBC005C8A8E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51502FB61F3A9BBC005C8A8E /* LoginView.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1FA200475F86C8BB7B47BBC0 /* Pods_UBroke1_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBroke1_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E6926800CE25C9D974B0AEE /* Pods-UBroke1.0UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBroke1.0UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBroke1.0UITests/Pods-UBroke1.0UITests.release.xcconfig"; sourceTree = "<group>"; };
+		51185A201F451959005DFA13 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5148E61E1F364FC200C796E3 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		5148E6201F38027A00C796E3 /* OPMetroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPMetroView.swift; sourceTree = "<group>"; };
 		51502FB61F3A9BBC005C8A8E /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		51D395431F2E9C65001E4CB6 /* UBroke1.0 */ = {
 			isa = PBXGroup;
 			children = (
+				51185A201F451959005DFA13 /* Extensions.swift */,
 				517230041F3BF4E80099B424 /* Cells */,
 				51722FF91F3BE8B00099B424 /* Questionnaire */,
 				51D395441F2E9C65001E4CB6 /* AppDelegate.swift */,
@@ -512,6 +515,7 @@
 				51D395751F301009001E4CB6 /* SWRevealViewController.m in Sources */,
 				51502FB71F3A9BBC005C8A8E /* LoginView.swift in Sources */,
 				51D395771F301173001E4CB6 /* FrontView.swift in Sources */,
+				51185A211F451959005DFA13 /* Extensions.swift in Sources */,
 				517230031F3BF4E10099B424 /* InfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
