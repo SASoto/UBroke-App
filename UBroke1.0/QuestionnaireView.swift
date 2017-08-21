@@ -19,8 +19,8 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
     var hourlyOrNot: Bool?
     var questArray_H: [String] = ["How much do you earn hourly?", "How many hours do you work in a week?"]
     var questArray_W: [String] = ["How much do you earn weekly?", "How many days do you work in a week?", "How many hours do you work in a day?"]
-    var passedUser: String?
-    var passedPass: String?
+    //var passedUser: String?
+    //var passedPass: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -173,8 +173,8 @@ class QuestionnaireView: UIViewController, UITableViewDelegate, UITableViewDataS
             let vc = revealVC.frontViewController as! UINavigationController
             vc.loadView()
             let mainVC = vc.topViewController as! FrontView
-                mainVC.passedUser = passedUser
-                mainVC.passedPass = passedPass
+                //mainVC.passedUser = passedUser
+                //mainVC.passedPass = passedPass
                 mainVC.passedInfo = infoArray
         }
     }

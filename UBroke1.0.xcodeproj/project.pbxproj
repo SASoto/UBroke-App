@@ -11,7 +11,6 @@
 		51185A211F451959005DFA13 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51185A201F451959005DFA13 /* Extensions.swift */; };
 		5148E61F1F364FC300C796E3 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148E61E1F364FC200C796E3 /* QuestionCell.swift */; };
 		5148E6211F38027A00C796E3 /* OPMetroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5148E6201F38027A00C796E3 /* OPMetroView.swift */; };
-		51502FB71F3A9BBC005C8A8E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51502FB61F3A9BBC005C8A8E /* LoginView.swift */; };
 		51722FF61F3BE11C0099B424 /* QuestionnaireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51722FF51F3BE11C0099B424 /* QuestionnaireView.swift */; };
 		517230031F3BF4E10099B424 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517230021F3BF4E10099B424 /* InfoCell.swift */; };
 		51D395451F2E9C65001E4CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395441F2E9C65001E4CB6 /* AppDelegate.swift */; };
@@ -22,7 +21,6 @@
 		51D395651F2E9C65001E4CB6 /* UBroke1_0UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395641F2E9C65001E4CB6 /* UBroke1_0UITests.swift */; };
 		51D395751F301009001E4CB6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 51D395741F301009001E4CB6 /* SWRevealViewController.m */; };
 		51D395771F301173001E4CB6 /* FrontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395761F301173001E4CB6 /* FrontView.swift */; };
-		51D395791F30193D001E4CB6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D395781F30193D001E4CB6 /* ProfileView.swift */; };
 		51D3957B1F301ACF001E4CB6 /* MetroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D3957A1F301ACF001E4CB6 /* MetroView.swift */; };
 		58A32F7D765A599AFD585BBF /* Pods_UBroke1_0Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D142E8E63747D561B44D82E9 /* Pods_UBroke1_0Tests.framework */; };
 		64AE4B120C8A59C71FB4A388 /* Pods_UBroke1_0UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9E7F8F617097ED414D0768 /* Pods_UBroke1_0UITests.framework */; };
@@ -51,7 +49,6 @@
 		51185A201F451959005DFA13 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		5148E61E1F364FC200C796E3 /* QuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
 		5148E6201F38027A00C796E3 /* OPMetroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPMetroView.swift; sourceTree = "<group>"; };
-		51502FB61F3A9BBC005C8A8E /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		51722FF51F3BE11C0099B424 /* QuestionnaireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionnaireView.swift; sourceTree = "<group>"; };
 		517230021F3BF4E10099B424 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		51D395411F2E9C65001E4CB6 /* UBroke1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UBroke1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +67,6 @@
 		51D395731F301009001E4CB6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		51D395741F301009001E4CB6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		51D395761F301173001E4CB6 /* FrontView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontView.swift; sourceTree = "<group>"; };
-		51D395781F30193D001E4CB6 /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		51D3957A1F301ACF001E4CB6 /* MetroView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroView.swift; sourceTree = "<group>"; };
 		734F9CA1EC5E268D074263EC /* Pods-UBroke1.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UBroke1.0.release.xcconfig"; path = "Pods/Target Support Files/Pods-UBroke1.0/Pods-UBroke1.0.release.xcconfig"; sourceTree = "<group>"; };
 		7B9E7F8F617097ED414D0768 /* Pods_UBroke1_0UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UBroke1_0UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,10 +159,8 @@
 				51D395501F2E9C65001E4CB6 /* Info.plist */,
 				51D395721F301008001E4CB6 /* UBroke1.0-Bridging-Header.h */,
 				51D395761F301173001E4CB6 /* FrontView.swift */,
-				51D395781F30193D001E4CB6 /* ProfileView.swift */,
 				51D3957A1F301ACF001E4CB6 /* MetroView.swift */,
 				5148E6201F38027A00C796E3 /* OPMetroView.swift */,
-				51502FB61F3A9BBC005C8A8E /* LoginView.swift */,
 			);
 			path = UBroke1.0;
 			sourceTree = "<group>";
@@ -506,14 +500,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				51D395791F30193D001E4CB6 /* ProfileView.swift in Sources */,
 				51D3957B1F301ACF001E4CB6 /* MetroView.swift in Sources */,
 				51722FF61F3BE11C0099B424 /* QuestionnaireView.swift in Sources */,
 				51D395451F2E9C65001E4CB6 /* AppDelegate.swift in Sources */,
 				5148E61F1F364FC300C796E3 /* QuestionCell.swift in Sources */,
 				5148E6211F38027A00C796E3 /* OPMetroView.swift in Sources */,
 				51D395751F301009001E4CB6 /* SWRevealViewController.m in Sources */,
-				51502FB71F3A9BBC005C8A8E /* LoginView.swift in Sources */,
 				51D395771F301173001E4CB6 /* FrontView.swift in Sources */,
 				51185A211F451959005DFA13 /* Extensions.swift in Sources */,
 				517230031F3BF4E10099B424 /* InfoCell.swift in Sources */,

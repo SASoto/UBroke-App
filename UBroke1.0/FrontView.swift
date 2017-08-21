@@ -19,11 +19,9 @@ class FrontView: UIViewController {
         performSegue(withIdentifier: "mv2ProfView", sender: nil)
     }
     
-    @IBOutlet weak var userLabel: UILabel!
-    
     let screenSize = UIScreen.main.bounds
-    var passedUser: String?
-    var passedPass: String?
+    //var passedUser: String?
+    //var passedPass: String?
     
     var passedInfo: [Double]!
     
@@ -32,12 +30,12 @@ class FrontView: UIViewController {
 
         // Do any additional setup after loading the view.
         //print(passedUser!)
-        print(passedUser)
+        /*print(passedUser)
         if(passedUser != nil) {
             userLabel.text = passedUser
         } else {
             userLabel.text = "Anonymous"
-        }
+        }*/
         
         settingsMenu()
         buttonStyles()
